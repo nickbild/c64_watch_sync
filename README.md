@@ -1,1 +1,4 @@
-# c64_watch_sync
+# C64 Watch v2
+
+Coming soon!
+
