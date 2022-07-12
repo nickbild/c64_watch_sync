@@ -1362,8 +1362,12 @@ void sync_cb()
 {
    sender.begin();
 
-   sender.sendNEC(0x00FFE01FUL);  
-   sender.sendNEC(currentStepCount);
+   sender.sendNEC(0xFF00FF00UL);      // Start token
+   sender.sendNEC(0x16);              // YY
+   sender.sendNEC(0x07);              // MM
+   sender.sendNEC(0x0B);              // DD
+   sender.sendNEC(currentStepCount);  // Step count
+   sender.sendNEC(0x00FF00FFUL);      // End token
    
    menuBars.hidden(false);
 }
