@@ -17,6 +17,11 @@ Created by Lewis he on October 10, 2019.
 #include "FS.h"
 #include "SD.h"
 #include "TinyBasicPlus.h"
+#include <IRremoteESP8266.h>
+#include <IRsend.h>
+
+IRsend sender(13);
+int currentStepCount;
 
 #define RTC_TIME_ZONE   "CST-8"
 
@@ -68,6 +73,7 @@ static void view_event_handler(lv_obj_t *obj, lv_event_t event);
 
 static void wifi_event_cb();
 static void basic_cb();
+static void sync_cb();
 static void sd_event_cb();
 static void setting_event_cb();
 static void light_event_cb();
@@ -317,7 +323,7 @@ private:
 MenuBar::lv_menu_config_t _cfg[7] = {
 //    {.name = "WiFi",  .img = (void *) &wifi, .event_cb = wifi_event_cb},
     {.name = "BASIC",  .img = (void *) &c64_basic, .event_cb = basic_cb},
-    {.name = "Bluetooth",  .img = (void *) &bluetooth, /*.event_cb = bluetooth_event_cb*/},
+    {.name = "Sync",  .img = (void *) &bluetooth, .event_cb = sync_cb},
     {.name = "SD Card",  .img = (void *) &sd,  /*.event_cb =sd_event_cb*/},
     {.name = "Light",  .img = (void *) &light, /*.event_cb = light_event_cb*/},
     {.name = "Setting",  .img = (void *) &setting, /*.event_cb = setting_event_cb */},
@@ -428,6 +434,9 @@ void setupGui()
 
 void updateStepCounter(uint32_t counter)
 {
+    Serial.print("Counter: ");
+    Serial.println(counter);
+    currentStepCount = counter;
     bar.setStepCounter(counter);
 }
 
@@ -1346,6 +1355,16 @@ static void wifi_destory()
 void basic_cb()
 {
    basic_loop();
+   menuBars.hidden(false);
+}
+
+void sync_cb()
+{
+   sender.begin();
+
+   sender.sendNEC(0x00FFE01FUL);  
+   sender.sendNEC(currentStepCount);
+   
    menuBars.hidden(false);
 }
 

@@ -24,10 +24,6 @@ Created by Lewis he on October 10, 2019.
 #include <WiFi.h>
 #include "gui.h"
 #include "TinyBasicPlus.h"
-#include <IRremoteESP8266.h>
-#include <IRsend.h>
-
-IRsend sender(13);
 
 #define G_EVENT_VBUS_PLUGIN         _BV(0)
 #define G_EVENT_VBUS_REMOVE         _BV(1)
@@ -112,7 +108,7 @@ void setup()
 {
     Serial.begin(115200);
 
-    sender.begin();
+//    sender.begin();
 
     //Create a program that allows the required message objects and group flags
     g_event_queue_handle = xQueueCreate(20, sizeof(uint8_t));
@@ -232,7 +228,7 @@ void loop()
     uint8_t data;
     static uint32_t start = 0;
 
-    sender.sendNEC(0x00FFE01FUL);
+//    sender.sendNEC(0x00FFE01FUL);
 
     //! Fast response wake-up interrupt
     EventBits_t  bits = xEventGroupGetBits(isr_group);
