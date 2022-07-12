@@ -1363,10 +1363,13 @@ void sync_cb()
 {
    sender.begin();
 
+  TTGOClass *ttgo = TTGOClass::getWatch();
+   RTC_Date currDt = ttgo->rtc->getDateTime();
+
    sender.sendNEC(0xFF00FF00UL);      // Start token
-   sender.sendNEC(0x16);              // YY
-   sender.sendNEC(0x07);              // MM
-   sender.sendNEC(0x0B);              // DD
+   sender.sendNEC(currDt.year);       // YYYY
+   sender.sendNEC(currDt.month);      // MM
+   sender.sendNEC(currDt.day);        // DD
    sender.sendNEC(currentStepCount);  // Step count
    sender.sendNEC(0x00FF00FFUL);      // End token
    
