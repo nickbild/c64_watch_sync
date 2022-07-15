@@ -1,0 +1,6 @@
+LOAD"SYNC.PRG",8,1
+NEW
+LOAD"WPAL3.PRG",8,1
+RUN
+
+* wpal3.prg jmps to $C000 at the end, which is the start of sync.prg

@@ -1,0 +1,1 @@
+~/software/dasm/dasm watch_sync.asm -osync.prg -f1
