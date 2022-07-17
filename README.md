@@ -12,7 +12,7 @@ A common feature of modern smartwatches is their ability to track fitness-relate
 
 The C64 Watch has an onboard infrared transmitter, so it is possible to encode any arbitrary data into a series of IR pulses.  I used an IR receiver paired with an Arduino Micro to decode IR signals sent by the watch, then put that data, along with a latch signal, on pins of the C64's user port.
 
-On the C64, the assembly program [wpal3.prg](https://github.com/nickbild/c64_watch_sync/blob/main/wpal3.prg) loads the graphics for the `C64 Watch Pal` application into the appropriate memory locations, then calls [sync.prg](https://github.com/nickbild/c64_watch_sync/blob/main/sync.prg) to set up the raster interrupts to split the screen between bitmap and text modes.  This program also handles checking for new data from the watch, and updating the step count data in memory, and displaying it on screen in decimal format.
+On the C64, the assembly program [wpal3.prg](https://github.com/nickbild/c64_watch_sync/blob/main/wpal3.prg) loads the graphics for the `C64 Watch Pal` application into the appropriate memory locations, then calls [sync.prg](https://github.com/nickbild/c64_watch_sync/blob/main/sync.prg) to set up the raster interrupts to split the screen between bitmap and text modes.  This program also handles checking for new data from the watch, updating the step count data in memory, and displaying it on screen in decimal format.
 
 ## To Install
 
