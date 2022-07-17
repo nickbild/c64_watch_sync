@@ -26,7 +26,7 @@ Arduino Micro and IR sensor connected to user port breakout board:
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/arduino_zoom_out_sm.jpg)
 
-It runs BASIC too:
+The watch runs BASIC, too:
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/basic_sm.jpg)
 
