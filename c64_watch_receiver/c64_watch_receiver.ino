@@ -12,6 +12,20 @@ uint8_t steps;
 
 void setup()
 {
+  // Data.
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  // Latch.
+  pinMode(11, OUTPUT);
+
+  digitalWrite(11, LOW);
+  
   Serial.begin(9600);
   irrecv.enableIRIn(); // Start the receiver
 }
@@ -75,5 +89,19 @@ void printPacket() {
 
 
 void sendToC64() {
-  // TODO:
+  Serial.print("Sending to C64: ");
+  Serial.println(steps);
+  
+  digitalWrite(2, bitRead(steps, 0));
+  digitalWrite(3, bitRead(steps, 1));
+  digitalWrite(4, bitRead(steps, 2));
+  digitalWrite(5, bitRead(steps, 3));
+  digitalWrite(6, bitRead(steps, 4));
+  digitalWrite(7, bitRead(steps, 5));
+  digitalWrite(8, bitRead(steps, 6));
+  digitalWrite(9, bitRead(steps, 7));
+  
+  digitalWrite(11, HIGH);
+  delay(500);
+  digitalWrite(11, LOW);
 }
