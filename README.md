@@ -1,12 +1,14 @@
 # C64 Fitness Watch
 
-Coming soon!
-
 Keep tabs on your fitness with this C64-themed smartwatch that wirelessly syncs data to your Commodore 64 computer.
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/watch_pal_c64_sm.jpg)
 
 ## How It Works
+
+I previously built the [C64 Watch](https://github.com/nickbild/c64_watch), which is a Commodore 64-themed Lilygo T-Watch 2020 with an onboard BASIC interpreter.  But for a smartwatch to be really useful, it needs to be able to sync with a computer.  Sure, I could easily sync it with a modern computer, but I thought it would be way more fun to come up with a way to wirelessly sync with an actual Commodore 64 computer.
+
+The C64 Watch has an onboard infrared transmitter, so it is possible to encode any arbitrary data into a series of IR pulses.  I used an IR receiver paired with an Arduino Micro to decode IR signals sent by the watch, then put that data, along with a latch signal, on pins of the C64's user port pins.
 
 ## To Install
 
