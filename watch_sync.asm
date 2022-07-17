@@ -100,8 +100,23 @@ Irq
     cmp #%00000100
     bne SkipScreenUpdate
     ; Write user port value to screen.
-    lda 56577
-    sta 1969
+    ; lda 56577
+    ; sta 1969
+
+    ldx 56577
+    ldy #$00
+
+    STX div_lo
+    STY div_hi
+
+    LDY #$04
+next    JSR div10
+    ORA #$30
+    STA 1969,Y
+    DEY
+    BPL next
+
+
 SkipScreenUpdate
 
     LDA #<Irq2            ; set interrupt vectors to the second interrupt service routine at Irq2
@@ -142,3 +157,21 @@ Irq2
     ASL $D019            ; acknowledge the interrupt by clearing the VIC's interrupt flag
 
     JMP $EA81            ; jump into shorter ROM routine to only restore registers from the stack etc
+
+
+div10:
+    LDX #$11
+    LDA #$00
+    CLC
+loop    ROL
+    CMP #$0A
+    BCC skip
+    SBC #$0A
+skip    ROL div_lo
+    ROL div_hi
+    DEX
+    BNE loop
+    RTS
+
+div_lo  .byte
+div_hi  .byte
