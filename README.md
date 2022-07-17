@@ -47,7 +47,7 @@ Watch sync tool:
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/sync4_sm.jpg)
 
-Watch Pal program (for Commodore 64):
+C64 Watch Pal program (for Commodore 64):
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/watch_pal_sm.jpg)
 
