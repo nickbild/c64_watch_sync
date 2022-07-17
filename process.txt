@@ -5,7 +5,3 @@ RUN
 
 * wpal3.prg jmps to $C000 at the end, which is the start of sync.prg
 
-poke 1024, 16
-poke 55296,7
-
-poke 1024+y*40+x, code
