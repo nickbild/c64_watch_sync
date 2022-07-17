@@ -10,6 +10,8 @@ Keep tabs on your fitness with this C64-themed smartwatch that wirelessly syncs 
 
 ## Media
 
+Click here for the demo video.
+
 C64 Watch:
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/home1_sm.jpg)
