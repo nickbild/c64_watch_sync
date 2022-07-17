@@ -60,7 +60,7 @@ The watch runs BASIC, too:
 - 1 x Lilygo T-Watch 2020
 - 1 x Commodore 64
 - 1 x Arduino Micro
-- 1 x IR sensor
+- 1 x IR receiver sensor (TSOP38238)
 
 ## About the Author
 
