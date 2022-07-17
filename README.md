@@ -57,7 +57,7 @@ The watch runs BASIC, too:
 
 ## Bill of Materials
 
-- 1 x [C64 Watch](https://github.com/nickbild/c64_watch)
+- 1 x Lilygo T-Watch 2020
 - 1 x Commodore 64
 - 1 x Arduino Micro
 - 1 x IR sensor
