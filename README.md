@@ -2,6 +2,8 @@
 
 Coming soon!
 
+Keep tabs on your fitness with this C64-themed smartwatch that wirelessly syncs data to your Commodore 64 computer.
+
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/watch_pal_c64_sm.jpg)
 
 ## How It Works
