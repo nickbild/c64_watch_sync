@@ -8,7 +8,11 @@ Keep tabs on your fitness with this C64-themed smartwatch that wirelessly syncs 
 
 I previously built the [C64 Watch](https://github.com/nickbild/c64_watch), which is a Commodore 64-themed Lilygo T-Watch 2020 with an onboard BASIC interpreter.  But for a smartwatch to be really useful, it needs to be able to sync with a computer.  Sure, I could easily sync it with a modern computer, but I thought it would be way more fun to come up with a way to wirelessly sync with an actual Commodore 64 computer.
 
+A common feature of modern smartwatches is their ability to track fitness-related metrics, so I used the C64 Watch's accelerometer as a step counter to demonstrate my wireless syncing method.
+
 The C64 Watch has an onboard infrared transmitter, so it is possible to encode any arbitrary data into a series of IR pulses.  I used an IR receiver paired with an Arduino Micro to decode IR signals sent by the watch, then put that data, along with a latch signal, on pins of the C64's user port pins.
+
+On the C64, the assembly program [wpal3.prg](https://github.com/nickbild/c64_watch_sync/blob/main/wpal3.prg) loads the graphics for the `C64 Watch Pal` application into the appropriate memory locations, then calls [sync.prg](https://github.com/nickbild/c64_watch_sync/blob/main/sync.prg) to set up the raster interrupts to split the screen between bitmap and text modes.  This program also handles watching for new data from the watch, and updating the step count data in memory, and displaying it on screen in decimal format.
 
 ## To Install
 
