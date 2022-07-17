@@ -1,4 +1,4 @@
-# C64 Watch Sync
+# C64 Fitness Watch
 
 Coming soon!
 
