@@ -3,11 +3,55 @@
     org $C000            ; 49152
 
 
-    jsr RasterInterruptInit
-    rts
+    ; Write text to screen: "today's steps: "
+    lda #20
+    sta 1954
+    lda #15
+    sta 1955
+    lda #4
+    sta 1956
+    lda #1
+    sta 1957
+    lda #25
+    sta 1958
+    lda #39
+    sta 1959
+    lda #19
+    sta 1960
 
-; MainLoop
-;     jmp MainLoop
+    lda #19
+    sta 1962
+    lda #20
+    sta 1963
+    lda #5
+    sta 1964
+    lda #16
+    sta 1965
+    lda #19
+    sta 1966
+    lda #58
+    sta 1967
+
+    ; Add color to the text.
+    ldx #$20
+    lda #$07
+ColorLoop
+    sta 56226,x
+    dex
+    bne ColorLoop
+    sta 56226
+
+    lda #$00        ; Set user port data lines all to input.
+    sta 56579
+
+    lda 56578       ; Set user port PA2 to input.
+    and #%11111011
+    sta 56578
+
+    jsr RasterInterruptInit
+
+MainLoop
+    jmp MainLoop
 
 
 RasterInterruptInit
@@ -50,6 +94,15 @@ Irq
     ; Set charset location.
     lda #$16
     sta $D018
+
+    lda 56576   ; Read PA2 to see if data is ready.
+    AND #%00000100
+    cmp #%00000100
+    bne SkipScreenUpdate
+    ; Write user port value to screen.
+    lda 56577
+    sta 1969
+SkipScreenUpdate
 
     LDA #<Irq2            ; set interrupt vectors to the second interrupt service routine at Irq2
     STA $0314
