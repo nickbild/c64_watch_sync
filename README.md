@@ -8,6 +8,18 @@ Coming soon!
 
 ## Media
 
+C64 Watch:
+
+![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/home1_sm.jpg)
+
+Watch sync tool:
+
+![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/sync4_sm.jpg)
+
+It runs BASIC too:
+
+![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/basic_sm.jpg)
+
 ## Bill of Materials
 
 ## About the Author
