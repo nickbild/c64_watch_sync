@@ -3,7 +3,6 @@
 Keep tabs on your fitness with this C64-themed smartwatch that wirelessly syncs data to your Commodore 64 computer.
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/wearing_watch_sm.png)
-![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/watch_pal_c64_sm.jpg)
 
 ## How It Works
 
@@ -51,6 +50,8 @@ Watch sync tool:
 C64 Watch Pal program (for Commodore 64):
 
 ![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/watch_pal_sm.jpg)
+
+![](https://raw.githubusercontent.com/nickbild/c64_watch_sync/main/media/watch_pal_c64_sm.jpg)
 
 Arduino Micro and IR sensor connected to user port breakout board:
 
