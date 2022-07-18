@@ -37,7 +37,7 @@ RUN
 
 ## Media
 
-Click here for the demo video.
+[Click here](https://www.youtube.com/watch?v=CAOlCtSZ5kg) for the demo video.
 
 C64 Watch:
 
